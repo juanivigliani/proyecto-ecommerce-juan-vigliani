@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gondola</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="img/logo.png" alt="Logo de Góndola de Vino" />
+      <h1 class="header__titulo">GONDOLA</h1>
+      <p>Seleccion de vinos unicos, directo a tu mesa</p>
+    </header>
+
+    <nav class="nav">
+      <ul class="nav__lista">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="pages/catalogo.html">Catálogo</a></li>
+        <li><a href="pages/nosotros.html">Nosotros</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>
+        <li><a href="pages/carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="intro">
+        <h2>Vinos destacados</h2>
+        <article>
+          <img src="img/malbec.jpg" alt="Botella de vino Malbec" />
+          <h3>Tomero Malbec</h3>
+          <p>Un vino intenso, con notas a frutos rojos y especias.</p>
+          <button>Agregar al carrito</button>
+        </article>
+
+        <article>
+          <img
+            src="img/cabernet.jpg"
+            alt="Botella de vino Cabernet Sauvignon"
+          />
+          <h3>Cabernet Sauvignon</h3>
+          <p>Aromas a ciruela y pimienta, con taninos suaves.</p>
+          <button>Agregar al carrito</button>
+        </article>
+      </section>
+
+      <section class="video">
+        <h2>Video institucional</h2>
+        <video controls>
+          <source
+            src="multimedia/Sirviendo vino en copa.mp4"
+            type="video/mp4"
+          />
+          <track
+            src="multimedia/subtitulos.vtt"
+            kind="subtitles"
+            srclang="es"
+            label="Español"
+          />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </section>
+      <section class="reseñas">
+        <h2>Reseñas de Nuestros Clientes</h2>
+
+        <section class="card">
+          <i class="fa-solid fa-user-circle card__icon"></i>
+          <h3 class="card__nombre">Juan Pérez</h3>
+          <p class="card__opinion">
+            “Excelente selección de vinos. Me encantó la atención personalizada
+            y la rapidez del envío.”
+          </p>
+        </section>
+
+        <section class="card">
+          <i class="fa-solid fa-user-circle card__icon"></i>
+          <h3 class="card__nombre">María Gómez</h3>
+          <p class="card__opinion">
+            “Los vinos llegaron en perfectas condiciones. Sin dudas, volveré a
+            comprar.”
+          </p>
+        </section>
+
+        <section class="card">
+          <i class="fa-solid fa-user-circle card__icon"></i>
+          <h3 class="card__nombre">Pedro López</h3>
+          <p class="card__opinion">
+            “Productos de excelente calidad y presentación. Ideal para regalar o
+            disfrutar.”
+          </p>
+        </section>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 Góndola de Vino. Todos los derechos reservados.</p>
+      <p>
+        <a href="mailto:contacto@gondoladevinos.com"
+          >contacto@gondoladevinos.com</a
+        >
+      </p>
+      <p>
+        Seguinos: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
+        <a href="#">WhatsApp</a>
+      </p>
+    </footer>
+  </body>
+</html>
