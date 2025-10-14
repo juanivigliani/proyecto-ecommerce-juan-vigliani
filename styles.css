@@ -235,6 +235,85 @@ body {
   background-color: #4b1c28;
 }
 
+/* -------- VINOS DESTACADOS (HOME) -------- */
+.destacados {
+  background: linear-gradient(135deg, #fff5f2 0%, #f8e8e2 100%);
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin: 50px auto;
+}
+
+.destacados h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: #6b2737;
+  margin-bottom: 10px;
+}
+
+.destacados__intro {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.destacados__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.vino-destacado {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vino-destacado:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.vino-destacado img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.vino-info {
+  padding: 20px;
+}
+
+.vino-info h3 {
+  color: #6b2737;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.vino-info p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.vino-info button {
+  background-color: #6b2737;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.vino-info button:hover {
+  background-color: #4b1c28;
+}
+
 /* -------- RESEÑAS -------- */
 .reseñas {
   display: grid;

@@ -19,7 +19,7 @@
   </head>
   <body>
     <header class="header">
-      <img src="img/logo.png" alt="Logo de Góndola de Vino" />
+      <img src="img/logo.jpg" alt="Logo de Góndola de Vino" />
       <h1 class="header__titulo">GONDOLA</h1>
       <p>Seleccion de vinos unicos, directo a tu mesa</p>
     </header>
@@ -34,24 +34,41 @@
       </ul>
     </nav>
     <main>
-      <section class="intro">
-        <h2>Vinos destacados</h2>
-        <article>
-          <img src="img/malbec.jpg" alt="Botella de vino Malbec" />
-          <h3>Tomero Malbec</h3>
-          <p>Un vino intenso, con notas a frutos rojos y especias.</p>
-          <button>Agregar al carrito</button>
-        </article>
+      <section class="destacados">
+        <h2>Vinos Destacados</h2>
+        <p class="destacados__intro">
+          Una selección única de etiquetas que representan lo mejor de nuestra
+          cava.
+        </p>
 
-        <article>
-          <img
-            src="img/cabernet.jpg"
-            alt="Botella de vino Cabernet Sauvignon"
-          />
-          <h3>Cabernet Sauvignon</h3>
-          <p>Aromas a ciruela y pimienta, con taninos suaves.</p>
-          <button>Agregar al carrito</button>
-        </article>
+        <div class="destacados__grid">
+          <article class="vino-destacado">
+            <img src="img/malbec.jpg" alt="Malbec Reserva" />
+            <div class="vino-info">
+              <h3>Malbec Reserva</h3>
+              <p>Elegante, con notas a ciruelas maduras y un toque de roble.</p>
+              <button>Descubrir</button>
+            </div>
+          </article>
+
+          <article class="vino-destacado">
+            <img src="img/cabernet.jpg" alt="Cabernet Sauvignon" />
+            <div class="vino-info">
+              <h3>Cabernet Sauvignon</h3>
+              <p>Taninos suaves, aromas especiados y final persistente.</p>
+              <button>Descubrir</button>
+            </div>
+          </article>
+
+          <article class="vino-destacado">
+            <img src="img/Chardonnay.png" alt="Chardonnay" />
+            <div class="vino-info">
+              <h3>Chardonnay</h3>
+              <p>Notas cítricas y florales, ideal para acompañar mariscos.</p>
+              <button>Descubrir</button>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="video">
