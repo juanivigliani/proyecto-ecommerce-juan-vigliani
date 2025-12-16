@@ -1,90 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto</title>
+    <title>Contacto - Góndola Vinos</title>
+    <meta
+      name="description"
+      content="Contáctanos para consultas sobre pedidos, productos o bodega. Envíanos un mensaje."
+    />
+    <meta name="keywords" content="contacto, formulario, email, soporte" />
+    <meta name="author" content="Gondola Wines" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+    <header class="header">
+      <img
+        src="../img/Prueba sellos Gondola.jpg"
+        alt="Logo de Góndola de Vino, una copa y una botella"
+      />
+      <h1 class="header__titulo">GONDOLA</h1>
+      <p>Selección de vinos únicos, directo a tu mesa</p>
+    </header>
+
     <nav class="nav">
       <ul class="nav__lista">
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="./catalogo.html">Catálogo</a></li>
         <li><a href="./nosotros.html">Nosotros</a></li>
         <li><a href="./contacto.html">Contacto</a></li>
-        <li><a href="./carrito.html">Carrito</a></li>
+        <li>
+          <a href="./carrito.html"
+            >🛒 Carrito (<span id="contador-productos">0</span>)</a
+          >
+        </li>
       </ul>
     </nav>
-
     <main>
-      <section class="formulario">
-        <h2>Contacto</h2>
-        <form action="https://formspree.io/f/mblzpyqr" method="POST">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
+      <section class="contacto-form-container">
+        <h2>¿Tienes alguna pregunta? Contáctanos</h2>
+        <p class="destacados__intro">
+          Completa el formulario y te responderemos a la brevedad.
+        </p>
 
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
+        <form id="contacto-form" class="formulario">
+          <div class="form-grupo">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required />
+            <span class="error-mensaje" id="error-nombre"></span>
+          </div>
 
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <div class="form-grupo">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error-mensaje" id="error-email"></span>
+          </div>
 
-          <button type="submit">Enviar mensaje</button>
+          <div class="form-grupo">
+            <label for="mensaje">Tu Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+            <span class="error-mensaje" id="error-mensaje"></span>
+          </div>
+
+          <button type="submit" class="producto__boton">Enviar Consulta</button>
         </form>
       </section>
-
-      <section class="tabla-contacto">
-        <h2>Mensajes recibidos</h2>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Mensaje</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr class="fila-pendientes">
-              <td colspan="4">Mensajes pendientes de respuesta</td>
-            </tr>
-
-            <tr>
-              <td>Lucía Pérez</td>
-              <td>lucia@example.com</td>
-              <td>¿Hacen envíos a todo el país?</td>
-              <td>Pendiente</td>
-            </tr>
-
-            <tr>
-              <td>Juan López</td>
-              <td>juanlopez@example.com</td>
-              <td>Me gustaría saber más sobre los Malbec.</td>
-              <td>Pendiente</td>
-            </tr>
-
-            <tr>
-              <td rowspan="2">María Gómez</td>
-              <td rowspan="2">mariagomez@example.com</td>
-              <td>Excelente atención, gracias!</td>
-              <td>Respondido</td>
-            </tr>
-            <tr>
-              <td>Espero sus novedades.</td>
-              <td>Respondido</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
     </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Góndola de Vino. Todos los derechos reservados.</p>
+      <p>
+        <a href="mailto:contacto@gondoladevinos.com"
+          >contacto@gondoladevinos.com</a
+        >
+      </p>
+      <p>
+        Seguinos: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
+        <a href="#">WhatsApp</a>
+      </p>
+    </footer>
+    <script src="../app.js"></script>
   </body>
 </html>

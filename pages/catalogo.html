@@ -1,82 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto</title>
+    <title>Catálogo - Góndola Vinos Exclusivos</title>
+    <meta
+      name="description"
+      content="Descubre nuestra selección completa de vinos boutique. Añade al carrito y compra online."
+    />
+    <meta
+      name="keywords"
+      content="catálogo, vinos, malbec, cabernet, chardonnay, comprar vino"
+    />
+    <meta name="author" content="Gondola Wines" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="../styles.css" />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+    <header class="header">
+      <img
+        src="../img/Prueba sellos Gondola.jpg"
+        alt="Logo de Góndola de Vino, una copa y una botella"
+      />
+      <h1 class="header__titulo">GONDOLA</h1>
+      <p>Selección de vinos únicos, directo a tu mesa</p>
+    </header>
+
     <nav class="nav">
       <ul class="nav__lista">
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="./catalogo.html">Catálogo</a></li>
         <li><a href="./nosotros.html">Nosotros</a></li>
         <li><a href="./contacto.html">Contacto</a></li>
-        <li><a href="./carrito.html">Carrito</a></li>
+        <li>
+          <a href="./carrito.html"
+            >🛒 Carrito (<span id="contador-productos">0</span>)</a
+          >
+        </li>
       </ul>
     </nav>
     <main>
-        <section class="productos">
-  <article class="producto">
-    <img src="../img/malbec.jpg" alt="Botella de vino Malbec" />
-    <h3 class="producto__titulo">Tomero Malbec</h3>
-    <p class="producto__descripcion">Vino intenso con notas a frutos rojos y especias.</p>
-    <p class="producto__precio">$8.900</p>
-    <button class="producto__boton">
-      <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-    </button>
-  </article>
+      <section class="catalogo-completo">
+        <h2>Nuestra Selección Completa</h2>
+        <p class="destacados__intro">
+          Cargando productos de la API... ¡Un momento, por favor!
+        </p>
 
-  <article class="producto">
-    <img src="../img/cabernet.jpg" alt="Botella de vino Cabernet Sauvignon" />
-    <h3 class="producto__titulo">Cabernet Sauvignon</h3>
-    <p class="producto__descripcion">Aromas a ciruela y pimienta con taninos suaves.</p>
-    <p class="producto__precio">$10.200</p>
-    <button class="producto__boton">
-      <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-    </button>
-  </article>
-
-  <article class="producto">
-    <img src="../img/Chardonnay.png" alt="Botella de vino Chardonnay" />
-    <h3 class="producto__titulo">Chardonnay</h3>
-    <p class="producto__descripcion">Vino blanco fresco con notas cítricas y florales.</p>
-    <p class="producto__precio">$7.500</p>
-    <button class="producto__boton">
-      <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-    </button>
-  </article>
-
-  <article class="producto">
-    <img src="../img/rosado.jpeg" alt="Botella de vino Chardonnay" />
-    <h3 class="producto__titulo">Rosado</h3>
-    <p class="producto__descripcion">Vino rosado fresco con notas cítricas y florales.</p>
-    <p class="producto__precio">$7.500</p>
-    <button class="producto__boton">
-      <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-    </button>
-  </article>
-
-  <article class="producto">
-    <img src="../img/cabernet franc.jpg" alt="Botella de vino Chardonnay" />
-    <h3 class="producto__titulo">Rosado</h3>
-    <p class="producto__descripcion">Vino rosado fresco con notas cítricas y florales.</p>
-    <p class="producto__precio">$7.500</p>
-    <button class="producto__boton">
-      <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-    </button>
-  </article>
-</section>
-
+        <div id="contenedor-productos" class="destacados__grid"></div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Góndola de Vino. Todos los derechos reservados.</p>
+      <p>
+        <a href="mailto:contacto@gondoladevinos.com"
+          >contacto@gondoladevinos.com</a
+        >
+      </p>
+      <p>
+        Seguinos: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
+        <a href="#">WhatsApp</a>
+      </p>
+    </footer>
+    <script src="../app.js"></script>
+  </body>
 </html>

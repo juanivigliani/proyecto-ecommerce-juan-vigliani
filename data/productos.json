@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Malbec Reserva",
+    "description": "Intenso, con notas a ciruelas maduras, higos y un sutil toque de vainilla aportado por su paso por roble.",
+    "price": 8900,
+    "image": "malbec.jpg",
+    "category": "Tinto"
+  },
+  {
+    "id": 2,
+    "name": "Cabernet Sauvignon",
+    "description": "De color rubí profundo, ofrece taninos firmes, aromas a pimiento asado, tabaco y un final persistente.",
+    "price": 10200,
+    "image": "cabernet.jpg",
+    "category": "Tinto"
+  },
+  {
+    "id": 3,
+    "name": "Chardonnay Cosecha Tardía",
+    "description": "Blanco elegante y complejo. Notas cítricas y tropicales, balanceado con una acidez vibrante.",
+    "price": 7500,
+    "image": "chardonnay.png",
+    "category": "Blanco"
+  },
+  {
+    "id": 4,
+    "name": "Rosado de Pinot Noir",
+    "description": "Muy fresco y vivaz, con aromas a frutillas y cerezas. Ideal para aperitivos y días de calor.",
+    "price": 7200,
+    "image": "rosado.jpeg",
+    "category": "Rosado"
+  },
+  {
+    "id": 5,
+    "name": "Cabernet Franc Premium",
+    "description": "Elegante y especiado. Destacan las notas a grafito y eucalipto, con un cuerpo medio y final largo.",
+    "price": 9500,
+    "image": "cabernet franc.jpg",
+    "category": "Tinto"
+  },
+  {
+    "id": 6,
+    "name": "Caja de Degustación (6 u.)",
+    "description": "Una selección curada de nuestros 6 vinos más vendidos.",
+    "price": 45000,
+    "image": "caja degustacion.jpg",
+    "category": "Pack"
+  }
+]

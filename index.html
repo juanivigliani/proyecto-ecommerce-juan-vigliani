@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gondola</title>
+    <title>Gondola - Venta de Vinos Exclusivos</title>
+    <meta
+      name="description"
+      content="Selección de vinos únicos de bodegas boutique. Compra online y recibe en tu mesa."
+    />
+    <meta
+      name="keywords"
+      content="vinos, e-commerce, malbec, cabernet, bodegas, tienda de vinos"
+    />
+    <meta name="author" content="Gondola Wines" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
@@ -14,14 +24,15 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
-      <img src="img/logo.jpg" alt="Logo de Góndola de Vino" />
+      <img
+        src="img/Prueba sellos Gondola.jpg"
+        alt="Logo de Góndola de Vino, una copa y una botella"
+      />
       <h1 class="header__titulo">GONDOLA</h1>
-      <p>Seleccion de vinos unicos, directo a tu mesa</p>
+      <p>Selección de vinos únicos, directo a tu mesa</p>
     </header>
 
     <nav class="nav">
@@ -30,7 +41,11 @@
         <li><a href="pages/catalogo.html">Catálogo</a></li>
         <li><a href="pages/nosotros.html">Nosotros</a></li>
         <li><a href="pages/contacto.html">Contacto</a></li>
-        <li><a href="pages/carrito.html">Carrito</a></li>
+        <li>
+          <a href="pages/carrito.html"
+            >🛒 Carrito (<span id="contador-productos">0</span>)</a
+          >
+        </li>
       </ul>
     </nav>
     <main>
@@ -72,8 +87,8 @@
       </section>
 
       <section class="video">
-        <h2>Video institucional</h2>
-        <video controls>
+        <h2>Video Institucional</h2>
+        <video controls style="max-width: 100%; height: auto">
           <source
             src="multimedia/Sirviendo vino en copa.mp4"
             type="video/mp4"
@@ -87,37 +102,70 @@
           Tu navegador no soporta la etiqueta de video.
         </video>
       </section>
+
+      <section class="api-productos">
+        <h2>🍷 Ofertas de la Semana</h2>
+        <div id="productos-container" class="destacados__grid">
+          <p>Cargando ofertas...</p>
+        </div>
+        <div id="error-message"></div>
+      </section>
+
       <section class="reseñas">
         <h2>Reseñas de Nuestros Clientes</h2>
 
-        <section class="card">
+        <article class="card">
           <i class="fa-solid fa-user-circle card__icon"></i>
           <h3 class="card__nombre">Juan Pérez</h3>
           <p class="card__opinion">
             “Excelente selección de vinos. Me encantó la atención personalizada
             y la rapidez del envío.”
           </p>
-        </section>
+        </article>
 
-        <section class="card">
+        <article class="card">
           <i class="fa-solid fa-user-circle card__icon"></i>
           <h3 class="card__nombre">María Gómez</h3>
           <p class="card__opinion">
             “Los vinos llegaron en perfectas condiciones. Sin dudas, volveré a
             comprar.”
           </p>
-        </section>
+        </article>
 
-        <section class="card">
+        <article class="card">
           <i class="fa-solid fa-user-circle card__icon"></i>
           <h3 class="card__nombre">Pedro López</h3>
           <p class="card__opinion">
             “Productos de excelente calidad y presentación. Ideal para regalar o
             disfrutar.”
           </p>
-        </section>
+        </article>
+      </section>
+
+      <section id="preferencias-usuario">
+        <h2>⚙️ Personaliza tu Experiencia</h2>
+        <form id="form-preferencias">
+          <div>
+            <label for="nombre-usuario">Tu Nombre:</label>
+            <input
+              type="text"
+              id="nombre-usuario"
+              placeholder="Para un saludo personalizado"
+              required
+            />
+          </div>
+          <div>
+            <input type="checkbox" id="dark-mode-toggle" />
+            <label for="dark-mode-toggle"
+              >Activar Modo Oscuro (Mejora la vista de etiquetas)</label
+            >
+          </div>
+          <button type="submit">Guardar Preferencias</button>
+        </form>
+        <p id="saludo-usuario" style="margin-top: 15px; font-weight: bold"></p>
       </section>
     </main>
+
     <footer class="footer">
       <p>&copy; 2025 Góndola de Vino. Todos los derechos reservados.</p>
       <p>
@@ -130,5 +178,6 @@
         <a href="#">WhatsApp</a>
       </p>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>

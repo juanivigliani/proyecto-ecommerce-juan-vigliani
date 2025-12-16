@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras - Góndola</title>
+    <meta
+      name="description"
+      content="Revisa, edita y finaliza tu compra en el carrito de Góndola Vinos."
+    />
+    <meta name="keywords" content="carrito, compra, checkout, vinos" />
+    <meta name="author" content="Gondola Wines" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="../img/Prueba sellos Gondola.jpg"
+        alt="Logo de Góndola de Vino, una copa y una botella"
+      />
+      <h1 class="header__titulo">GONDOLA</h1>
+      <p>Selección de vinos únicos, directo a tu mesa</p>
+    </header>
+
+    <nav class="nav">
+      <ul class="nav__lista">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./catalogo.html">Catálogo</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+        <li>
+          <a href="./carrito.html"
+            >🛒 Carrito (<span id="contador-productos">0</span>)</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main class="contenedor-carrito">
+      <section class="items-seleccionados">
+        <h2>Mi Carrito de Compras</h2>
+
+        <div id="items-carrito">
+          <p class="mensaje-vacio">Cargando carrito...</p>
+        </div>
+
+        <div class="carrito-acciones">
+          <button id="boton-vaciar" class="producto__boton boton-secundario">
+            Vaciar Carrito
+          </button>
+        </div>
+      </section>
+
+      <section class="resumen-compra">
+        <h3>Resumen de Pedido</h3>
+        <div class="resumen-detalle">
+          <p>Subtotal:</p>
+          <p id="carrito-subtotal">$0</p>
+        </div>
+        <div class="resumen-detalle">
+          <p>Envío (Gratis en compras mayores a $15.000):</p>
+          <p id="carrito-envio">$1.500</p>
+        </div>
+        <hr />
+        <div class="resumen-detalle resumen-total">
+          <p>Total Final:</p>
+          <p id="carrito-total">$0</p>
+        </div>
+
+        <button id="boton-comprar" class="producto__boton">
+          Finalizar Compra
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Góndola de Vino. Todos los derechos reservados.</p>
+      <p>
+        <a href="mailto:contacto@gondoladevinos.com"
+          >contacto@gondoladevinos.com</a
+        >
+      </p>
+      <p>
+        Seguinos: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
+        <a href="#">WhatsApp</a>
+      </p>
+    </footer>
+    <script src="../app.js"></script>
+  </body>
+</html>

@@ -5,30 +5,75 @@
   box-sizing: border-box;
 }
 
-/* -------- FUENTE GENERAL -------- */
+/* -------- FUENTE GENERAL & BACKGROUND -------- */
 body {
   font-family: "Open Sans", sans-serif;
   color: #333;
   line-height: 1.5;
-  background-image: url("img/fondo-vino-imagen.jpg");
+  /* Requisito: Propiedad de background aplicada */
+  background-image: url("../img/fondo-vino-imagen.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
 }
 
-/* -------- HEADER -------- */
-.header {
+/* Estilos para el Modo Oscuro (Persistencia) */
+.dark-mode {
+  background-color: #1a1a1a; /* Fondo muy oscuro */
+  color: #f0f0f0; /* Texto claro */
+}
+
+.dark-mode section,
+.dark-mode .card {
+  background-color: #2c2c2c !important; /* Más oscuro para contenidos */
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode a {
+  color: #ffcc00; /* Dorado para destacar */
+}
+.dark-mode .nav {
+  background-color: #4b1c28; /* Navegación oscura */
+}
+.dark-mode .nav__lista a {
+  color: #f4d9d0;
+}
+.dark-mode .nav__lista a:hover {
+  background-color: #6b2737;
+  color: #fff;
+}
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #666;
+}
+
+/* -------- HEADER & FOOTER -------- */
+.header,
+.footer {
   background-color: #6b2737;
   color: white;
   text-align: center;
   padding: 20px 0;
 }
-
 .header__titulo {
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   letter-spacing: 1px;
+}
+.footer {
+  margin-top: 40px;
+  padding: 15px 0;
+}
+.footer a {
+  color: #f4d9d0;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
 
 /* -------- NAV -------- */
@@ -37,7 +82,6 @@ body {
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .nav__lista {
   display: flex;
   justify-content: center;
@@ -46,7 +90,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .nav__lista a {
   text-decoration: none;
   color: #6b2737;
@@ -55,167 +98,91 @@ body {
   border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .nav__lista a:hover {
   background-color: #6b2737;
   color: #fff;
 }
 
-/* -------- MAIN -------- */
+/* -------- MAIN & SECCIONES GENERALES -------- */
 main {
   width: 90%;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 30px auto;
 }
-
-/* -------- SECCIONES -------- */
 section {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
-
-.video {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #6b2737;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.video video {
-  width: 80%;
-  max-width: 700px;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-}
-
-.intro img {
-  display: block;
-  margin-top: 15px;
-  border-radius: 8px;
-}
-
-/* -------- FORMULARIO -------- */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input,
-textarea,
-button {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #6b2737;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4b1c28;
-}
-
-/* -------- TABLA -------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-}
-
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 10px 15px;
-  text-align: left;
-}
-
-th {
-  background-color: #6b2737;
-  color: white;
-}
-
-.fila-pendientes td {
-  text-align: center;
-  font-weight: bold;
-  background-color: #f4d9d0;
-}
-
-/* -------- FOOTER -------- */
-.footer {
-  background-color: #6b2737;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-}
-
-/* -------- TIPOGRAFÍA -------- */
-.header__titulo {
+/* -------- SECCIÓN DESTACADOS (HOME) -------- */
+.destacados h2 {
   font-family: "Playfair Display", serif;
 }
-
-body {
-  font-family: "Open Sans", sans-serif;
+.destacados__grid {
+  /* Uso de Grid para la sección destacada */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.vino-destacado {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.vino-destacado img {
+  width: 100%;
+  height: 250px; /* Tamaño fijo para uniformidad */
+  object-fit: cover;
 }
 
-/* -------- PRODUCTOS -------- */
+/* -------- SECCIÓN CATÁLOGO (Usa Flexbox para Cards) -------- */
 .productos {
+  /* Requisito: Sección productos organizada con Flexbox */
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .producto {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 280px;
+  width: 300px; /* Ancho fijo para las cards */
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
-
-.producto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 .producto img {
   width: 100%;
+  height: 300px; /* Tamaño fijo para imágenes del catálogo */
+  object-fit: cover;
   border-radius: 8px;
 }
-
 .producto__titulo {
   font-family: "Playfair Display", serif;
   font-size: 1.3rem;
-  margin: 10px 0;
   color: #6b2737;
 }
-
-.producto__descripcion {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
 .producto__precio {
   font-weight: bold;
   color: #4b1c28;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
-
 .producto__boton {
   background-color: #6b2737;
   color: white;
@@ -223,117 +190,32 @@ body {
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
-
-.producto__boton i {
-  margin-right: 5px;
-}
-
 .producto__boton:hover {
   background-color: #4b1c28;
 }
-
-/* -------- VINOS DESTACADOS (HOME) -------- */
-.destacados {
-  background: linear-gradient(135deg, #fff5f2 0%, #f8e8e2 100%);
-  text-align: center;
-  padding: 60px 20px;
-  border-radius: 12px;
-  margin: 50px auto;
-}
-
-.destacados h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.2rem;
-  color: #6b2737;
+.producto__descripcion {
+  margin-top: 10px;
   margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 3px solid #ffcc00;
 }
 
-.destacados__intro {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.destacados__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.vino-destacado {
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.vino-destacado:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-.vino-destacado img {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-}
-
-.vino-info {
-  padding: 20px;
-}
-
-.vino-info h3 {
-  color: #6b2737;
-  font-family: "Playfair Display", serif;
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-}
-
-.vino-info p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.vino-info button {
-  background-color: #6b2737;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.vino-info button:hover {
-  background-color: #4b1c28;
-}
-
-/* -------- RESEÑAS -------- */
+/* -------- SECCIÓN RESEÑAS (Usa Grid) -------- */
 .reseñas {
+  /* Requisito: Sección Reseñas organizada con Grid */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
   margin-top: 40px;
 }
-
 .reseñas h2 {
-  grid-column: 1 / -1; /* el título ocupa todo el ancho */
-  text-align: center;
-  color: #6b2737;
+  grid-column: 1 / -1;
   margin-bottom: 20px;
-  font-family: "Playfair Display", serif;
 }
-
-/* Tarjetas individuales */
 .card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -341,58 +223,200 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 .card__icon {
-  font-size: 60px;
+  font-size: 50px;
   color: #6b2737;
-  margin-bottom: 15px;
 }
 
-.card__nombre {
-  font-size: 1.1rem;
-  color: #4b1c28;
+/* -------- FORMULARIO DE CONTACTO -------- */
+.formulario-seccion {
+  max-width: 600px;
+  margin: 30px auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+label {
+  font-weight: bold;
+}
+input,
+textarea,
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.error-mensaje {
+  /* Se cambió de error-msg a error-mensaje para consistencia con HTML */
+  color: #ff0000;
+  font-size: 0.85rem;
+  margin-top: -10px;
+  font-weight: bold;
+}
+
+/* -------- CARRITO DE COMPRAS - Estilos de los contenedores de carrito -------- */
+.contenedor-carrito {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Una columna para ítems, una para resumen */
+  gap: 30px;
+}
+.resumen-compra {
+  /* Mantenemos el estilo de sección general, pero añadimos el borde de sección */
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: fit-content; /* Se ajusta al contenido */
+}
+.resumen-detalle {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+.resumen-detalle p:last-child {
+  font-weight: bold;
+}
+.resumen-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #6b2737;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 2px solid #6b2737;
+}
+.carrito-acciones {
+  margin-top: 20px;
+  text-align: right;
+}
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+.carrito-item:last-child {
+  border-bottom: none;
+}
+.carrito-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.carrito-info img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.carrito-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.carrito-controls input[type="number"] {
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+}
+
+#boton-vaciar {
+  background-color: #dc3545;
+  margin-right: 10px;
+}
+#boton-vaciar:hover {
+  background-color: #c82333;
+}
+#boton-comprar {
+  background-color: #28a745;
+  width: 100%;
+  margin-top: 20px;
+}
+#boton-comprar:hover {
+  background-color: #218838;
+}
+
+/* -------- ESTILOS ESPECÍFICOS PARA NOSOTROS (Mejora de modularidad) -------- */
+.img-nosotros {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.equipo-grid {
+  /* Uso de Flex para el equipo, ya que son pocos elementos */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.equipo-foto {
+  height: 200px;
+  width: 200px; /* Asegura que la foto sea un círculo perfecto */
+  object-fit: cover;
+  border-radius: 50%; /* Esto crea el efecto de foto redonda */
   margin-bottom: 10px;
+  border: 4px solid #f4d9d0; /* Añade un borde sutil */
 }
 
-.card__opinion {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.4;
+.equipo-cargo {
+  font-weight: bold;
+  color: #6b2737;
 }
 
-/* -------- MEDIA QUERY -------- */
+.trabaja-con-nosotros {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* -------- MEDIA QUERIES (RESPONSIVO) -------- */
+@media (max-width: 900px) {
+  main {
+    width: 95%;
+  }
+}
+
 @media (max-width: 768px) {
+  .nav__lista {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .nav__lista li {
+    text-align: center;
+  }
+
+  /* Carrito pasa a ser una sola columna */
+  .contenedor-carrito {
+    grid-template-columns: 1fr;
+  }
+
   /* Reseñas en una sola columna */
   .reseñas {
     grid-template-columns: 1fr;
     padding: 20px;
   }
 
-  /* Formulario de contacto adaptado */
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  /* Contenedores de productos se ajustan más */
+  .destacados__grid,
+  .productos {
+    grid-template-columns: 1fr;
+  }
+  .producto,
+  .vino-destacado {
+    width: 95%;
+    margin: auto;
   }
 
-  input,
-  textarea {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  input:focus,
-  textarea:focus {
-    border-color: #6b2737;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 5px rgba(107, 39, 55, 0.5);
+  /* Formulario de Contacto más compacto */
+  .contacto-form-container {
+    padding: 15px;
   }
 }
