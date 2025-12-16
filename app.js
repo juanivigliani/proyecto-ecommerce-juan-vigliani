@@ -7,7 +7,7 @@ let todosLosProductos = [];
 // Carrito inicializado leyendo LocalStorage o array vacío
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Elementos DOM comunes para el contador y modo oscuro
+// Elementos DOM para el contador y modo oscuro
 const contadorDOM = document.getElementById("contador-productos");
 const itemsCarritoDOM = document.getElementById("items-carrito");
 const saludoUsuario = document.getElementById("saludo-usuario");
@@ -18,10 +18,8 @@ const darkModeToggle = document.getElementById("dark-mode-toggle");
 // ====================================================================
 
 /**
- * Determina la ruta correcta a un recurso (JSON) dependiendo de la ubicación del HTML.
- * Esto es CRÍTICO para que funcione en /index.html (./data/) y en /pages/catalogo.html (../data/).
- * @param {string} rutaRoot - Ejemplo: './data/productos.json' (Para index.html)
- * @param {string} rutaSub - Ejemplo: '../data/productos.json' (Para pages/XXX.html)
+ * @param {string} rutaRoot -
+ * @param {string} rutaSub -
  * @returns {string} La ruta de acceso correcta.
  */
 function obtenerRuta(rutaRoot, rutaSub) {
@@ -41,7 +39,7 @@ function obtenerRutaBaseImagen() {
   if (window.location.pathname.includes("/pages/")) {
     return "../img/";
   }
-  // Si estamos en la raíz (index.html), entramos directamente a la carpeta img
+  // Si estamos en la raíz, entramos directamente a la carpeta img
   return "./img/";
 }
 
@@ -50,7 +48,7 @@ function obtenerRutaBaseImagen() {
  */
 async function obtenerProductos() {
   try {
-    // Usamos la función obtenerRuta para el JSON, ya que es el recurso más sensible
+    // Usamos la función obtenerRuta para el JSON
     const rutaJson = obtenerRuta(
       "./data/productos.json",
       "../data/productos.json"
@@ -192,7 +190,7 @@ async function agregarAlCarrito(idProducto) {
   }
 
   guardarCarritoYActualizar();
-  // Uso de SweetAlert o Toastify sería ideal aquí, pero usamos alert por simplicidad
+
   alert(
     `Se añadió 1 unidad de ${
       productoAñadir.name
@@ -362,21 +360,18 @@ function eliminarDelCarrito(idProducto) {
 // 3. GESTIÓN DE PREFERENCIAS (MODO OSCURO y LOCALSTORAGE)
 // ====================================================================
 
-// El DOM de preferencias solo existe en index.html
 const formularioPreferencias = document.getElementById("form-preferencias");
 
 function aplicarPreferencias() {
   const nombreGuardado = localStorage.getItem("preferenciaNombre");
   const isDarkMode = localStorage.getItem("preferenciaDarkMode") === "true";
 
-  // Actualiza el saludo en el HOME
   if (nombreGuardado && saludoUsuario) {
     saludoUsuario.textContent = `¡Bienvenido de vuelta, ${nombreGuardado}! Revisa nuestra selección.`;
     const nombreInput = document.getElementById("nombre-usuario");
     if (nombreInput) nombreInput.value = nombreGuardado;
   }
 
-  // Aplica el modo oscuro globalmente
   if (isDarkMode) {
     document.body.classList.add("dark-mode");
     if (darkModeToggle) darkModeToggle.checked = true;
@@ -386,7 +381,6 @@ function aplicarPreferencias() {
   }
 }
 
-// Listeners del formulario de preferencias (Solo en index.html)
 if (formularioPreferencias) {
   formularioPreferencias.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -422,7 +416,6 @@ if (contactoForm) {
     let esValido = true;
 
     const validarEmail = (email) => {
-      // Regex más robusto para email
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
     };
@@ -465,8 +458,7 @@ if (contactoForm) {
       alert(
         "✅ Formulario validado y enviado con éxito. Pronto te contactaremos."
       );
-      e.target.reset(); // Limpia el formulario
-      // En un proyecto real: fetch('url_del_servidor', { method: 'POST', body: data })
+      e.target.reset();
     }
   });
 }
@@ -489,26 +481,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 2. Carga los productos antes de cualquier renderizado
   await obtenerProductos();
 
-  // 3. Renderizar productos en Catálogo (si el ID existe)
+  // 3. Renderizar productos en Catálogo
   if (document.getElementById("contenedor-productos")) {
     renderizarProductos("contenedor-productos", todosLosProductos);
   }
 
-  // 4. Renderizar productos de Oferta en Home (si el ID existe)
-  // El ID "productos-container" no existe en el HTML de inicio que corregimos
-  // **Asumo que el ID correcto en tu index.html es "destacados-grid" (o similar) y lo dejo como estaba en tu plan original.**
+  // 4. Renderizar productos de Oferta en Home
   if (document.getElementById("productos-container")) {
     renderizarProductos("productos-container", todosLosProductos.slice(0, 3));
   } else if (document.getElementById("destacados-grid")) {
-    // Uso el ID más probable si estás usando el layout que hicimos
     renderizarProductos("destacados-grid", todosLosProductos.slice(0, 3));
   }
 
-  // 5. Renderizar vista detallada del carrito (si el ID existe)
+  // 5. Renderizar vista detallada del carrito
   if (itemsCarritoDOM) {
     renderizarCarrito();
   }
 
   // 6. Actualizar el contador global en el NAV
-  actualizarContadorCarrito();
-});
+  actualizarContadorCarrito;
+})(); //

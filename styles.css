@@ -10,32 +10,31 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #333;
   line-height: 1.5;
-  /* Requisito: Propiedad de background aplicada */
+
   background-image: url("../img/fondo-vino-imagen.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Estilos para el Modo Oscuro (Persistencia) */
 .dark-mode {
-  background-color: #1a1a1a; /* Fondo muy oscuro */
-  color: #f0f0f0; /* Texto claro */
+  background-color: #1a1a1a;
+  color: #f0f0f0;
 }
 
 .dark-mode section,
 .dark-mode .card {
-  background-color: #2c2c2c !important; /* Más oscuro para contenidos */
+  background-color: #2c2c2c !important;
   color: #f0f0f0;
   border: 1px solid #444;
 }
 .dark-mode h2,
 .dark-mode h3,
 .dark-mode a {
-  color: #ffcc00; /* Dorado para destacar */
+  color: #ffcc00;
 }
 .dark-mode .nav {
-  background-color: #4b1c28; /* Navegación oscura */
+  background-color: #4b1c28;
 }
 .dark-mode .nav__lista a {
   color: #f4d9d0;
@@ -128,7 +127,6 @@ h2 {
   font-family: "Playfair Display", serif;
 }
 .destacados__grid {
-  /* Uso de Grid para la sección destacada */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
@@ -142,13 +140,12 @@ h2 {
 }
 .vino-destacado img {
   width: 100%;
-  height: 250px; /* Tamaño fijo para uniformidad */
+  height: 250px;
   object-fit: cover;
 }
 
-/* -------- SECCIÓN CATÁLOGO (Usa Flexbox para Cards) -------- */
+/* -------- SECCIÓN CATÁLOGO -------- */
 .productos {
-  /* Requisito: Sección productos organizada con Flexbox */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -160,7 +157,7 @@ h2 {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 300px; /* Ancho fijo para las cards */
+  width: 300px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -168,7 +165,7 @@ h2 {
 }
 .producto img {
   width: 100%;
-  height: 300px; /* Tamaño fijo para imágenes del catálogo */
+  height: 300px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -203,9 +200,8 @@ h2 {
   border-left: 3px solid #ffcc00;
 }
 
-/* -------- SECCIÓN RESEÑAS (Usa Grid) -------- */
+/* -------- SECCIÓN RESEÑAS -------- */
 .reseñas {
-  /* Requisito: Sección Reseñas organizada con Grid */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
@@ -250,173 +246,169 @@ button {
   border-radius: 4px;
 }
 .error-mensaje {
-  /* Se cambió de error-msg a error-mensaje para consistencia con HTML */
   color: #ff0000;
   font-size: 0.85rem;
   margin-top: -10px;
   font-weight: bold;
 }
 
-/* -------- CARRITO DE COMPRAS - Estilos de los contenedores de carrito -------- */
+/* -------- CARRITO DE COMPRAS  -------- */
 .contenedor-carrito {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Una columna para ítems, una para resumen */
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
 }
 .resumen-compra {
-  /* Mantenemos el estilo de sección general, pero añadimos el borde de sección */
   padding: 25px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: fit-content; /* Se ajusta al contenido */
-}
-.resumen-detalle {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px dashed #ddd;
-}
-.resumen-detalle p:last-child {
-  font-weight: bold;
-}
-.resumen-total {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #6b2737;
-  padding-top: 15px;
-  margin-top: 10px;
-  border-top: 2px solid #6b2737;
-}
-.carrito-acciones {
-  margin-top: 20px;
-  text-align: right;
-}
-.carrito-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-}
-.carrito-item:last-child {
-  border-bottom: none;
-}
-.carrito-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.carrito-info img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-.carrito-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.carrito-controls input[type="number"] {
-  width: 60px;
-  text-align: center;
-  padding: 5px;
-}
-
-#boton-vaciar {
-  background-color: #dc3545;
-  margin-right: 10px;
-}
-#boton-vaciar:hover {
-  background-color: #c82333;
-}
-#boton-comprar {
-  background-color: #28a745;
-  width: 100%;
-  margin-top: 20px;
-}
-#boton-comprar:hover {
-  background-color: #218838;
-}
-
-/* -------- ESTILOS ESPECÍFICOS PARA NOSOTROS (Mejora de modularidad) -------- */
-.img-nosotros {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.equipo-grid {
-  /* Uso de Flex para el equipo, ya que son pocos elementos */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.equipo-foto {
-  height: 200px;
-  width: 200px; /* Asegura que la foto sea un círculo perfecto */
-  object-fit: cover;
-  border-radius: 50%; /* Esto crea el efecto de foto redonda */
-  margin-bottom: 10px;
-  border: 4px solid #f4d9d0; /* Añade un borde sutil */
-}
-
-.equipo-cargo {
-  font-weight: bold;
-  color: #6b2737;
-}
-
-.trabaja-con-nosotros {
-  margin-top: 30px;
-  text-align: center;
-}
-
-/* -------- MEDIA QUERIES (RESPONSIVO) -------- */
-@media (max-width: 900px) {
-  main {
-    width: 95%;
+  height: fit-content;
+  .resumen-detalle {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
   }
-}
-
-@media (max-width: 768px) {
-  .nav__lista {
-    flex-direction: column;
-    gap: 5px;
+  .resumen-detalle p:last-child {
+    font-weight: bold;
   }
-  .nav__lista li {
+  .resumen-total {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #6b2737;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 2px solid #6b2737;
+  }
+  .carrito-acciones {
+    margin-top: 20px;
+    text-align: right;
+  }
+  .carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  .carrito-item:last-child {
+    border-bottom: none;
+  }
+  .carrito-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .carrito-info img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .carrito-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .carrito-controls input[type="number"] {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  #boton-vaciar {
+    background-color: #dc3545;
+    margin-right: 10px;
+  }
+  #boton-vaciar:hover {
+    background-color: #c82333;
+  }
+  #boton-comprar {
+    background-color: #28a745;
+    width: 100%;
+    margin-top: 20px;
+  }
+  #boton-comprar:hover {
+    background-color: #218838;
+  }
+
+  .img-nosotros {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .equipo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .equipo-foto {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 4px solid #f4d9d0;
+  }
+
+  .equipo-cargo {
+    font-weight: bold;
+    color: #6b2737;
+  }
+
+  .trabaja-con-nosotros {
+    margin-top: 30px;
     text-align: center;
   }
 
-  /* Carrito pasa a ser una sola columna */
-  .contenedor-carrito {
-    grid-template-columns: 1fr;
+  /* -------- MEDIA QUERIES (RESPONSIVO) -------- */
+  @media (max-width: 900px) {
+    main {
+      width: 95%;
+    }
   }
 
-  /* Reseñas en una sola columna */
-  .reseñas {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
+  @media (max-width: 768px) {
+    .nav__lista {
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav__lista li {
+      text-align: center;
+    }
 
-  /* Contenedores de productos se ajustan más */
-  .destacados__grid,
-  .productos {
-    grid-template-columns: 1fr;
-  }
-  .producto,
-  .vino-destacado {
-    width: 95%;
-    margin: auto;
-  }
+    /* Carrito pasa a ser una sola columna */
+    .contenedor-carrito {
+      grid-template-columns: 1fr;
+    }
 
-  /* Formulario de Contacto más compacto */
-  .contacto-form-container {
-    padding: 15px;
+    /* Reseñas en una sola columna */
+    .reseñas {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    /* Contenedores de productos se ajustan más */
+    .destacados__grid,
+    .productos {
+      grid-template-columns: 1fr;
+    }
+    .producto,
+    .vino-destacado {
+      width: 95%;
+      margin: auto;
+    }
+
+    /* Formulario de Contacto más compacto */
+    .contacto-form-container {
+      padding: 15px;
+    }
   }
 }
